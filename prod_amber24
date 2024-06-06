@@ -1,0 +1,32 @@
+#!/bin/bash -l
+
+#SBATCH --job-name provaAmber
+#SBATCH --account DD-24-33
+#SBATCH --partition qgpu
+#SBATCH --time 24:00:00
+
+module load Amber/22.0-foss-2022a-AmberTools-23.3-CUDA-11.7.0
+
+antechamber -i best_738_var2.pdb -fi pdb -o best_738_var2_achamber.mol2 -fo mol2 -at gaff2 -c bcc -rn LIG -nc -1
+
+parmchk2 -i best_738_var2_achamber.mol2 -f mol2 -o best_738_var2_parmchk2.frcmod
+
+tleap -f tleap.in
+
+pmemd.cuda -O -i 01.min.mdin -o 01.min.mdout -p b738_2solvcomplex.prmtop -c b738_2solvcomplex.inpcrd -r 01.min.rst7 -inf 01.min.info -ref b738_2solvcomplex.inpcrd -x 01.min.traj
+pmemd.cuda -O -i 02.equil.mdin -o 02.equil.mdout -p b738_2solvcomplex.prmtop -c 01.min.rst7 -r 02.equil.rst7 -inf 02.equil.info -ref 01.min.rst7 -x 02.equil.traj
+pmemd.cuda -O -i 03.min.mdin -o 03.min.mdout -p b738_2solvcomplex.prmtop -c 02.equil.rst7 -r 03.min.rst7 -inf 03.min.info -ref 02.equil.rst7 -x 03.min.traj
+pmemd.cuda -O -i 04.min.mdin -o 04.min.mdout -p b738_2solvcomplex.prmtop -c 03.min.rst7 -r 04.min.rst7 -inf 04.min.info -ref 03.min.rst7 -x 04.min.traj
+pmemd.cuda -O -i 05.min.mdin -o 05.min.mdout -p b738_2solvcomplex.prmtop -c 04.min.rst7 -r 05.min.rst7 -inf 05.min.info -ref 04.min.rst7 -x 05.min.traj
+pmemd.cuda -O -i 06.equil.mdin -o 06.equil.mdout -p b738_2solvcomplex.prmtop -c 05.min.rst7 -r 06.equil.rst7 -inf 06.equil.info -ref 05.min.rst7 -x 06.equil.traj
+pmemd.cuda -O -i 07.equil.mdin -o 07.equil.mdout -p b738_2solvcomplex.prmtop -c 06.equil.rst7 -r 07.equil.rst7 -inf 07.equil.info -ref 06.equil.rst7 -x 07.equil.traj
+pmemd.cuda -O -i 08.equil.mdin -o 08.equil.mdout -p b738_2solvcomplex.prmtop -c 07.equil.rst7 -r 08.equil.rst7 -inf 08.equil.info -ref 07.equil.rst7 -x 08.equil.traj
+pmemd.cuda -O -i 09.equil.mdin -o 09.equil.mdout -p b738_2solvcomplex.prmtop -c 08.equil.rst7 -r 09.equil.rst7 -inf 09.equil.info -ref 08.equil.rst7 -x 09.equil.traj
+
+pmemd.cuda -O -i 10.prod.mdin -o 10.prod_1.mdout -p b738_2solvcomplex.prmtop -c 09.equil.rst7 -r 10.prod_1.rst7 -inf 10.prod_1.info -ref 09.equil.rst7 -x 10.prod_1.traj
+pmemd.cuda -O -i 10.prod.mdin -o 10.prod_2.mdout -p b738_2solvcomplex.prmtop -c 10.prod_1.rst7 -r 10.prod_2.rst7 -inf 10.prod_2.info -ref 10.prod_1.rst7 -x 10.prod_2.traj
+pmemd.cuda -O -i 10.prod.mdin -o 10.prod_3.mdout -p b738_2solvcomplex.prmtop -c 10.prod_2.rst7 -r 10.prod_3.rst7 -inf 10.prod_3.info -ref 10.prod_2.rst7 -x 10.prod_3.traj
+pmemd.cuda -O -i 10.prod.mdin -o 10.prod_4.mdout -p b738_2solvcomplex.prmtop -c 10.prod_3.rst7 -r 10.prod_4.rst7 -inf 10.prod_4.info -ref 10.prod_3.rst7 -x 10.prod_4.traj
+
+MMPBSA.py -O -i mmpbsa.in -o FINAL_RESULTS_MMPBSA.dat -sp b738_2solvcomplex.prmtop -cp b738_2gascomplex.prmtop -rp b738_2receptor.prmtop -lp b738_2ligand.prmtop -y 10.prod_4.traj
+
