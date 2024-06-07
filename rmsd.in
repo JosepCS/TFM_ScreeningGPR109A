@@ -1,6 +1,8 @@
 parm b738_2solvcomplex.prmtop
 trajin 10.prod_4.nc
 
+autoimage
+
 reference best_738_var2.solvated.pdb
 reference 10.prod_4.nc lastframe
 
@@ -9,4 +11,3 @@ rms Last :1-309&!@H= refindex 1 out rmsd.agr
 rms AutoDock :1-309&!@H= refindex 0 out rmsd.agr
 
 run
-
