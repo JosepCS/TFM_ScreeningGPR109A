@@ -1,0 +1,34 @@
+###Load Protein & GAFF & water force field
+source leaprc.protein.ff19SB
+source leaprc.gaff
+source leaprc.water.tip3p
+
+###Needed so we can use igb=8 model
+set default PBradii mbondi3
+
+###Load Protein pdb file
+rec = loadpdb 8jim_editSPLL_protein.pdb
+
+###Load Ligand frcmod/mol2
+loadamberparams best_738_var2_parmchk2.frcmod
+lig = loadmol2 best_738_var2_achamber.mol2
+
+###Create gas-phase complex
+gascomplex = combine {rec lig}
+solvcomplex = combine {rec lig}
+
+savepdb gascomplex best_738_var2.gasphase.pdb
+saveamberparm gascomplex b738_2gascomplex.prmtop b738_2gascomplex.inpcrd
+saveamberparm rec b738_2receptor.prmtop b738_2receptor.inpcrd
+saveamberparm lig b738_2ligand.prmtop b738_2ligand.inpcrd
+
+solvatebox solvcomplex TIP3PBOX 8
+addions solvcomplex Na+ 0
+addions solvcomplex Cl- 0
+
+saveamberparm solvcomplex b738_2solvcomplex.prmtop b738_2solvcomplex.inpcrd
+savepdb solvcomplex best_738_var2.solvated.pdb
+
+quit
+
+
