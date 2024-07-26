@@ -1,0 +1,23 @@
+REMARK   4 XXXX COMPLIES WITH FORMAT V. 2.0
+HETATM    1  C1  UNL     1     112.188 114.863  84.318  1.00  0.00      best C  
+HETATM    2  N1  UNL     1     111.819 115.863  83.566  1.00  0.00      best N  
+HETATM    3  O1  UNL     1     113.068 113.869  83.875  1.00  0.00      best O  
+HETATM    4  H1  UNL     1     114.007 113.749  84.229  1.00  0.00      best H  
+HETATM    5  C8  UNL     1     111.665 114.777  85.721  1.00  0.00      best C  
+HETATM    6  C9  UNL     1     111.700 116.137  86.435  1.00  0.00      best C  
+HETATM    7  C10 UNL     1     113.067 116.862  86.349  1.00  0.00      best C  
+HETATM    8  C11 UNL     1     114.181 115.894  86.644  1.00  0.00      best C  
+HETATM    9  O4  UNL     1     114.656 115.167  85.731  1.00  0.00      best O  
+HETATM   10  O5  UNL     1     114.719 115.825  87.924  1.00  0.00      best O  
+HETATM   11  N2  UNL     1     113.273 117.478  85.032  1.00  0.00      best N  
+HETATM   12  H17 UNL     1     112.349 117.712  84.598  1.00  0.00      best H  
+HETATM   13  H18 UNL     1     113.758 116.808  84.392  1.00  0.00      best H  
+HETATM   14  H19 UNL     1     113.841 118.353  85.116  1.00  0.00      best H  
+HETATM   15  C2  UNL     1     112.223 116.164  82.187  1.00  0.00      best C  
+HETATM   16  C3  UNL     1     112.824 117.549  82.096  1.00  0.00      best C  
+HETATM   17  O2  UNL     1     112.651 118.366  83.039  1.00  0.00      best O  
+HETATM   18  O3  UNL     1     113.618 117.921  81.018  1.00  0.00      best O  
+HETATM   19  C4  UNL     1     111.059 115.913  81.188  1.00  0.00      best C  
+HETATM   20  C5  UNL     1     111.351 114.785  80.167  1.00  0.00      best C  
+HETATM   21  C6  UNL     1     110.502 113.548  80.499  1.00  0.00      best C  
+HETATM   22  C7  UNL     1     112.836 114.396  80.125  1.00  0.00      best C  

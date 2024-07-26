@@ -1,0 +1,26 @@
+REMARK   4 XXXX COMPLIES WITH FORMAT V. 2.0
+HETATM    1  C1  UNL     1     111.644 114.812  83.978  1.00  0.00      best C  
+HETATM    2  N1  UNL     1     110.624 115.123  83.228  1.00  0.00      best N  
+HETATM    3  C2  UNL     1     110.544 115.084  81.797  1.00  0.00      best C  
+HETATM    4  O2  UNL     1     111.268 114.302  81.124  1.00  0.00      best O  
+HETATM    5  O1  UNL     1     112.899 114.493  83.451  1.00  0.00      best O  
+HETATM    6  H1  UNL     1     113.098 114.449  82.461  1.00  0.00      best H  
+HETATM    7  C7  UNL     1     111.476 114.809  85.467  1.00  0.00      best C  
+HETATM    8  C8  UNL     1     111.642 116.215  86.066  1.00  0.00      best C  
+HETATM    9  C9  UNL     1     113.024 116.851  85.781  1.00  0.00      best C  
+HETATM   10  C10 UNL     1     114.136 116.028  86.373  1.00  0.00      best C  
+HETATM   11  O5  UNL     1     114.611 115.045  85.743  1.00  0.00      best O  
+HETATM   12  O6  UNL     1     114.640 116.343  87.629  1.00  0.00      best O  
+HETATM   13  N3  UNL     1     113.226 117.008  84.336  1.00  0.00      best N  
+HETATM   14  H14 UNL     1     112.327 116.832  83.830  1.00  0.00      best H  
+HETATM   15  H15 UNL     1     113.563 117.974  84.112  1.00  0.00      best H  
+HETATM   16  H16 UNL     1     113.932 116.314  83.999  1.00  0.00      best H  
+HETATM   17  C3  UNL     1     109.518 115.923  81.097  1.00  0.00      best C  
+HETATM   18  C4  UNL     1     110.000 117.367  80.871  1.00  0.00      best C  
+HETATM   19  C5  UNL     1     111.491 117.463  80.458  1.00  0.00      best C  
+HETATM   20  C6  UNL     1     112.402 117.509  81.653  1.00  0.00      best C  
+HETATM   21  O3  UNL     1     113.152 116.531  81.914  1.00  0.00      best O  
+HETATM   22  O4  UNL     1     112.399 118.613  82.496  1.00  0.00      best O  
+HETATM   23  N2  UNL     1     111.870 116.327  79.617  1.00  0.00      best N  
+HETATM   24  H7  UNL     1     111.024 115.735  79.449  1.00  0.00      best H  
+HETATM   25  H8  UNL     1     112.569 115.735  80.125  1.00  0.00      best H  
