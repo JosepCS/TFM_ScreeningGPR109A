@@ -1,0 +1,10 @@
+parm ./../b56_4solvcomplex.prmtop
+trajin ./../10.prod_4.nc 
+ 
+hbond contacts :1-290 avgout avg.dat series uuseries hbond.gnu nointramol
+go
+lifetime contacts[solutehb] out contacts-lifetime.dat
+go
+
+run
+
